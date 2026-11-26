@@ -71,3 +71,7 @@ export default defineConfig([
   },
 ])
 ```
+## CI/CD Pipeline
+
+GitHub Webhook automatic Jenkins build testing.
+Docker image deployment using AWS EC2.

@@ -75,3 +75,4 @@ export default defineConfig([
 
 GitHub Webhook automatic Jenkins build testing.
 Docker image deployment using AWS EC2.
+Automated CI/CD deployment test

@@ -1,78 +1,121 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite – Task - Manager - Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern Kanban Dashboard application built using **React, TypeScript, and Vite**. This project demonstrates frontend development and automated CI/CD deployment using Jenkins, Docker, and AWS EC2.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Frontend:** React, TypeScript
+- **Build Tool:** Vite
+- **Containerization:** Docker
+- **CI/CD:** Jenkins
+- **Version Control:** Git & GitHub
+- **Cloud Platform:** AWS EC2
+- **Automation:** GitHub Webhooks
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React-based frontend application
+- TypeScript for type safety
+- Fast development with Vite and HMR
+- ESLint configuration for code quality
+- Docker-based application deployment
+- Automated Jenkins CI/CD pipeline
 
-## Expanding the ESLint configuration
+## 🏗️ CI/CD Pipeline
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Implemented an automated CI/CD workflow:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+Developer
+   |
+   v
+GitHub Repository
+   |
+   v
+GitHub Webhook
+   |
+   v
+Jenkins Pipeline
+   |
+   v
+Source Code Checkout
+   |
+   v
+Docker Image Build
+   |
+   v
+Docker Hub Registry
+   |
+   v
+AWS EC2 Deployment
+   |
+   v
+Running Application
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## ⚙️ CI/CD Implementation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Configured GitHub Webhooks for automatic Jenkins build triggering.
+- Integrated GitHub with Jenkins.
+- Automated source code checkout.
+- Built Docker images through Jenkins Pipeline.
+- Pushed Docker images to Docker Hub.
+- Deployed Docker containers on AWS EC2.
+- Validated the application after deployment.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 💻 Run Locally
+
+Clone the repository:
+
+```bash
+git clone <YOUR-GITHUB-REPOSITORY-URL>
+cd <PROJECT-FOLDER>
 ```
-## CI/CD Pipeline
 
-GitHub Webhook automatic Jenkins build testing.
-Docker image deployment using AWS EC2.
-Automated CI/CD deployment test
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start development server:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+## 🐳 Docker Deployment
+
+Build Docker image:
+
+```bash
+docker build -t kanban-dashboard .
+```
+
+Run Docker container:
+
+```bash
+docker run -d -p 8080:80 --name kanban-dashboard kanban-dashboard
+```
+
+## ☁️ AWS Deployment
+
+The application is deployed on an AWS EC2 instance using Docker containers through an automated Jenkins CI/CD pipeline.
+
+## 🎯 Project Objectives
+
+- Understand React and TypeScript application structure.
+- Learn Docker image creation and container deployment.
+- Implement Jenkins pipeline automation.
+- Integrate GitHub Webhooks with Jenkins.
+- Understand CI/CD workflows in AWS.
+
+---
+
+*This project is part of my hands-on DevOps and Cloud learning journey.*

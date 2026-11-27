@@ -68,27 +68,13 @@ Running Application
 Clone the repository:
 
 ```bash
-git clone <YOUR-GITHUB-REPOSITORY-URL>
-cd <PROJECT-FOLDER>
-```
+git clone https://github.com/Lakshmiprasath003/Deploy-Your-Code-on-a-Docker-Container-using-Jenkins-on-AWS.git
 
-Install dependencies:
+cd Deploy-Your-Code-on-a-Docker-Container-using-Jenkins-on-AWS
 
-```bash
 npm install
-```
 
-Start development server:
-
-```bash
 npm run dev
-```
-
-Build for production:
-
-```bash
-npm run build
-```
 
 ## 🐳 Docker Deployment
 
